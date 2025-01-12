@@ -1,10 +1,14 @@
 import './JokePage.css';
 import { Link } from 'react-router-dom';
-import { useState }  from 'react';
+import { useState, useEffect }  from 'react';
 
 function JokePage({joke}) {
-  const [currentJoke, setJoke] = useState("Joke Goes Here");
+  const [currentJoke, setJoke] = useState(null);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getjoke()
+  }, [])
 
   function getjoke() {
     fetch(`https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun,Spooky?blacklistFlags=nsfw,religious,political,racist,sexist,explicit`, {
@@ -35,7 +39,7 @@ function JokePage({joke}) {
         <div className="joke-page">
       <h1>Joke Page</h1>
       <section className="joke-area">
-        {currentJoke}
+        <h3>{currentJoke}</h3>
       </section> 
       <button className='get-joke' aria-label="get a joke" onClick={() => getjoke()}>
           Tell Me A Joke

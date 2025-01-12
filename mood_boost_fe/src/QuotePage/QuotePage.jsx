@@ -1,12 +1,11 @@
 import "./QuotePage.css";
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function QuotePage() {
   const [quote, setQuote] = useState(null)
 
   function fetchQuote() {
-    fetch(`http://api.quotable.io/quotes/random?tags=happiness`)
+    fetch(`https://api.realinspire.tech/v1/quotes/random`)
     .then(response=> {
       if (!response.ok) {
         throw new Error("Failed to fetch quote")
@@ -15,7 +14,6 @@ function QuotePage() {
     })
     .then(data => {
       setQuote(data[0])
-      console.log(data)
     })
     .catch(error => {
       console.error("Error fetching quote", error)
