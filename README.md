@@ -1,8 +1,18 @@
 # MOOD BOOST (Front End)
-
-![Front End Image](mood_boost_fe/src/icons/Moodboost_fe.png)
-
 Mood Boost offers simple breathing exercises, inspiring quotes, and a touch of humor to brighten your day and put a smile on your face.  You can use the application as a guest or login to have it track your activity usage.
+
+# Previews
+## Home Page
+![Home Page](https://github.com/Mood-Boost/mood_boost_fe/blob/main/mood_boost_fe/src/icons/New%20Recording%20-%201_17_2025%2C%203_51_23%20PM-high.gif)
+
+## Navigate to Random Page
+![Navigate to Random Page](https://github.com/Mood-Boost/mood_boost_fe/blob/main/mood_boost_fe/src/icons/New%20Recording%20-%201_17_2025%2C%204_08_07%20PM-high.gif)
+
+## Inspirational Quotes
+![Inspirational Quotes](https://github.com/Mood-Boost/mood_boost_fe/blob/main/mood_boost_fe/src/icons/New%20Recording%20-%201_17_2025%2C%204_19_35%20PM-high.gif)
+
+## Jokes
+![Jokes](https://github.com/Mood-Boost/mood_boost_fe/blob/main/mood_boost_fe/src/icons/New%20Recording%20-%201_17_2025%2C%204_24_47%20PM-high.gif)
 
 ### Deployed Site
 [Mood Boost](http://mood-boost-fe.onrender.com/)
@@ -17,10 +27,10 @@ The Mood Boost App is designed to enhance users' emotional well-being through en
 - Prioritize User Empathy: Create an inclusive, user-centered design by developing detailed user stories and conducting equity analyses.
 
 ## Getting Started
-Clone down the resposity to your location machine, cd into the direcotry and run: 
+Clone down the resposity to your local machine, cd into the direcotry and run: 
 - npm install
 
-To see the front end application functioning from the command prompt run:
+To see the front end application functioning from the command line run:
 - npm start
 
 This will allow you to use the spinner and the menu bar to navigate through all of the pages and see the application functioning.  To utilize the user login portion you will also need to clone down the backend server and have it up and running as well.
