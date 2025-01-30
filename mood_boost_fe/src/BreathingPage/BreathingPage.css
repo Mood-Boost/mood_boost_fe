@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;500&display=swap');
 
+/* General Page Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,16 +8,18 @@ body, html {
     z-index: 0;
 }
 
+/* Main Page Layout */
 .breathing-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 85vh;
-    background: linear-gradient(0.25turn, #ffb84d, #ff9900, #ff5724, #f44034, #e92063 );
+    background: linear-gradient(0.25turn, #ffb84d, #ff9900, #ff5724, #f44034, #e92063);
     overflow: hidden;
     position: relative;
 }
 
+/* Background Overlay */
 .background {
     position: absolute;
     top: 0;
@@ -25,74 +29,111 @@ body, html {
     z-index: 0;
 }
 
+/* Start Button (Bubble Effect) */
 #start-button {
-    background: linear-gradient(to bottom, #ff5724, #ff9900); 
+    background: linear-gradient(to bottom, #ffd1dc, #ffb6c1);
     border: none;
     color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 10px;
-    width: 200px;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: normal;
+    font-family: "Lobster", cursive;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
     cursor: pointer;
-    height: 60px;
-    font-weight: bold;
-    box-sizing: border-box;
-    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.5);
+    animation: bubbleFloat 3s infinite ease-in-out;
 }
 
+#start-button {
+  background: linear-gradient(to bottom, #D1B3FF, #C5A3FF); /* Soft Lavender */
+  box-shadow: 0 4px 10px rgba(197, 163, 255, 0.5);
+}
+
+#start-button:hover {
+  background: linear-gradient(to bottom, #C5A3FF, #B38FFF);
+}
+
+#start-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.5);
+}
+
+/* Breathing Circle Container */
 .breathing-container {
-    position: relative; 
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -90px;
-  }
-  
-  .breathing-circle {
+}
+
+/* Breathing Circle */
+.breathing-circle {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background: radial-gradient(farthest-corner, #30248c, #4335b1, #4f3ece, #4054d8);
     box-shadow: 0 0 20px 5px rgba(72, 118, 255, 0.8);
-    animation: breathAndTextChange 10s infinite, colorChange 10s infinite; 
+    margin-top: -30px;
     z-index: 1;
-    margin-top: -30px; 
-  }
-  
-  .breathing-text {
+    animation: breathAndTextChange 10s infinite ease-in-out, colorChange 10s infinite, bounceEffect 10s infinite;
+}
+
+/* Breathing Text */
+.breathing-text {
     position: absolute;
-    font-family: fantasy;
-    font-size: 30px;
-    font-weight: bold;
+    font-family: "Lobster", cursive;
+    font-size: 28px;
+    font-weight: normal;
     color: white;
     text-align: center;
     pointer-events: none;
     z-index: 2;
-  }
-  
+    animation: textScale 10s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes bubbleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes textScale {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(0.2); }
+}
+
 @keyframes breathAndTextChange {
     0% {
-      transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(72, 118, 255, 0.8);
+        opacity: 1;
     }
     50% {
-      transform: scale(3); 
+        transform: scale(3);
+        box-shadow: 0 0 40px rgba(72, 118, 255, 1);
+        opacity: 1;
     }
     100% {
-      transform: scale(1);
+        transform: scale(0.8);
+        box-shadow: 0 0 10px rgba(72, 118, 255, 0.5);
+        opacity: 0.9;
     }
+}
+
+@keyframes colorChange {
+  0%, 50% {
+      background: radial-gradient(farthest-corner, #30248c, #4335b1, #4f3ece, #4054d8);
   }
-  
-  @keyframes colorChange {
-    0% {
-      background: radial-gradient(farthest-corner, #30248c, #4335b1, #4f3ece, #4054d8); 
-    }
-    50% {
-      background: radial-gradient(farthest-corner, #30248c, #4335b1, #4f3ece, #4054d8); 
-    }
-    51% {
-      background: radial-gradient(farthest-corner, #1e90ff, #00bfff, #87cefa, #add8e6); 
-    }
-    100% {
-      background: radial-gradient(farthest-corner, #1e90ff, #00bfff, #87cefa, #add8e6); 
-    }
+  51%, 100% {
+      background: radial-gradient(farthest-corner, #D1B3FF, #C5A3FF, #B38FFF); /* Soothing Lavender */
   }
+}

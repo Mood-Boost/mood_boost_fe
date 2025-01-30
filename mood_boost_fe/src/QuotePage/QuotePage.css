@@ -1,142 +1,134 @@
-.quote-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-}
-
-.moving-background {
-  position: fixed;
+.quote-background {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 9999 !important;
+  pointer-events: none;
 }
 
-.quote-circles .circle.first {
-  background: rgb(255, 153, 0);
-}
-
-.quote-circles .circle.second {
-  background: rgb(255, 184, 77); 
-}
-
-.quote-circles .circle.third {
-  background: rgb(255, 87, 36); 
-}
-
-.quote-header {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  text-align: center;
-  z-index: 1000;
-}
-
-#quote-h1 {
-  color: #f44034;
-  width: 100%;
-  margin-top: 50px;
-}
-
-#quote-description {
-  color: #ff5724;
-}
-
-.new-quote {
-  background: linear-gradient(to bottom, #ff5724, #ff9900); 
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 10px;
-  width: 200px;
-  cursor: pointer;
-  height: 60px;
-  font-weight: bold;
-  box-sizing: border-box;
-  margin-bottom: 50px;
-  margin-top: 15px;
-  z-index: 1000;
-}
-
-.quote-container {
+.quote-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background: linear-gradient(0.25turn, #ffb84d, #ff9900, #ff5724, #f44034, #e92063);
+  padding-top: 12vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#quote-h1 {
+  font-family: "Lobster", cursive;
+  font-size: 4vw;
+  font-weight: 400;
+  color: white;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin-bottom: 3vh;
+  position: relative;
+  z-index: 3;
+}
+
+#quote-description {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 2vw;
+  color: rgba(50, 50, 50, 0.9);
+  line-height: 1.4;
+  max-width: 75%;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-container {
+  background: hsla(15, 100%, 88%, 0.3);
+  width: 90%;
+  max-width: 800px;
+  padding: 3vh 5%;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-container {
+  min-height: auto;
 }
 
 #speech-bubble {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: #f44034;
-  color: white;
-  font-weight: bold;
-  box-shadow: 
-    -8px -8px 20px #fff9, 
-    -6px -6px 6px #fff9,
-    8px 8px 20px #0001, 
-    5px 5px 6px #0001, 
-    inset 0px 0px 0px #fff9,
-    inset 0px 0px 0px #0001, 
-    inset 0px 0px 0px #fff9,
-    inset 0px 0px 0px #0001;
-  font-size: 1.5em;
-  padding: 20px;
-  position: relative;
-  min-height: 250px;;
-  width: 70%;
+  background: rgba(255, 255, 255, 0.75);
+  color: rgb(50, 50, 50);
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 2.5vw;
+  padding: 3%;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 15px;
+  text-align: center;
   overflow-wrap: break-word;
-}
-
-#speech-bubble:nth-child(1) {
   position: relative;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-#speech-bubble:nth-child(1)::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -80px; 
-  bottom: 0;
-  width: 80px;
-  background: linear-gradient(to bottom, #ff5724, #ff9900); 
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-#speech-bubble:nth-child(1)::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: -30px;
-  right: 20px;
-  border-width: 30px 0 0 30px;
-  border-style: solid;
-  border-color: #f44034 transparent;
-  width: 2px;
-  border-radius: 0 0 20px 20px;
+  z-index: 2;
 }
 
 #quote-author {
-  align-self: flex-end;
+  display: block;
   margin-top: 20px;
-  font-size: 1em;
+  font-size: 2vw;
   font-style: italic;
+  font-weight: 500;
+  color: rgba(50, 50, 50, 0.8);
 }
 
-@media (max-width: 700px) {
+.new-quote {
+  font-size: 1.5vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ff5724, #ff9900);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 90%;
+  max-width: 300px;
+  min-height: 50px;
+}
+
+.new-quote:hover {
+  background: #e64a19;
+}
+
+@media (max-width: 768px) {
+  #quote-h1 {
+    font-size: 5vw;
+  }
+
+  #quote-description {
+    font-size: 3.5vw;
+  }
+
+  .quote-container {
+    width: 95%;
+    padding: 20px;
+  }
+
   #speech-bubble {
-    font-size: 1.2em;
+    font-size: 3vw;
     padding: 15px;
   }
-  #quote-author {
-    font-size: .75em;
+
+  .new-quote {
+    font-size: 3.5vw;
+    padding: 8px;
   }
 }
