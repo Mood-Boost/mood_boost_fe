@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;500&display=swap');
 
-/* General Page Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -8,7 +7,6 @@ body, html {
     z-index: 0;
 }
 
-/* Main Page Layout */
 .breathing-page {
     display: flex;
     justify-content: center;
@@ -19,7 +17,6 @@ body, html {
     position: relative;
 }
 
-/* Background Overlay */
 .background {
     position: absolute;
     top: 0;
@@ -29,7 +26,6 @@ body, html {
     z-index: 0;
 }
 
-/* Start Button (Bubble Effect) */
 #start-button {
     background: linear-gradient(to bottom, #ffd1dc, #ffb6c1);
     border: none;
@@ -52,7 +48,7 @@ body, html {
 }
 
 #start-button {
-  background: linear-gradient(to bottom, #D1B3FF, #C5A3FF); /* Soft Lavender */
+  background: linear-gradient(to bottom, #D1B3FF, #C5A3FF);
   box-shadow: 0 4px 10px rgba(197, 163, 255, 0.5);
 }
 
@@ -65,7 +61,6 @@ body, html {
     box-shadow: 0 2px 8px rgba(255, 182, 193, 0.5);
 }
 
-/* Breathing Circle Container */
 .breathing-container {
     position: relative;
     display: flex;
@@ -74,7 +69,6 @@ body, html {
     margin-top: -90px;
 }
 
-/* Breathing Circle */
 .breathing-circle {
     width: 150px;
     height: 150px;
@@ -86,7 +80,6 @@ body, html {
     animation: breathAndTextChange 10s infinite ease-in-out, colorChange 10s infinite, bounceEffect 10s infinite;
 }
 
-/* Breathing Text */
 .breathing-text {
     position: absolute;
     font-family: "Lobster", cursive;
@@ -99,7 +92,6 @@ body, html {
     animation: textScale 10s infinite ease-in-out;
 }
 
-/* Animations */
 @keyframes bubbleFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
@@ -134,6 +126,6 @@ body, html {
       background: radial-gradient(farthest-corner, #30248c, #4335b1, #4f3ece, #4054d8);
   }
   51%, 100% {
-      background: radial-gradient(farthest-corner, #D1B3FF, #C5A3FF, #B38FFF); /* Soothing Lavender */
+      background: radial-gradient(farthest-corner, #D1B3FF, #C5A3FF, #B38FFF); 
   }
 }
