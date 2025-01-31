@@ -1,3 +1,11 @@
+body {
+  background: linear-gradient(0.25turn, #ffb84d, #ff9900, #ff5724, #f44034, #e92063);
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
 .userHistory {
   margin: 20px auto;
   padding: 20px;
