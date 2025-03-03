@@ -10,7 +10,7 @@ function QuotePage({user, logUserActivity}) {
   }
 
   function fetchQuote() {
-    fetch('https://api.realinspire.tech/v1/quotes/random')
+    fetch('https://api.realinspire.live/v1/quotes/random')
     .then(response=> {
       if (!response.ok) {
         throw new Error("Failed to fetch quote")

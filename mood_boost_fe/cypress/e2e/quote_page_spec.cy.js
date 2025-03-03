@@ -1,6 +1,6 @@
 describe('Quote Page', () => {
   beforeEach(() => {
-    cy.intercept('https://api.realinspire.tech/v1/quotes/random', {
+    cy.intercept('https://api.realinspire.live/v1/quotes/random', {
       statusCode: 200,
       body: [
         {
